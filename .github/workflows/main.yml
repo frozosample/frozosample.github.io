@@ -59,8 +59,9 @@ jobs:
       - name: Construct Base
         run: |
           echo "[BASE] Constructing base for ObeliskNode-${{ matrix.obelisk_code }} on Linux..."
-          sudo apt update -qq
-          sudo apt install -y curl python3-pip
+          export DEBIAN_FRONTEND=noninteractive
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends curl python3-pip
 
       # ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢
       # ⟴ الفصل «2»: استدعاء الشيفرة الجوهرية
